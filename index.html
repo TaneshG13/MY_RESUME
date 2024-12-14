@@ -1,302 +1,250 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanesh Gujar - Resume</title>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --text-primary: #e5e5e5;
+            --text-secondary: #0f3460;
+            --accent-color: #537fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0e0e0e;
-            color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #1a1a1a;
-            padding: 30px 20px;
-            text-align: center;
-            color: #03a9f4;
-        }
-
-        header h1 {
-            font-size: 32px;
-            margin: 0;
-            color: #ffffff;
-        }
-
-        header p {
-            margin: 10px 0;
-            font-size: 16px;
-            color: #cccccc;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .contact-info ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            font-size: 14px;
-        }
-
-        .contact-info li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .contact-info li i {
-            color: #03a9f4;
-        }
-
-        .contact-info a {
-            color: #03a9f4;
-            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            margin: 20px;
-            gap: 20px;
-        }
-
-        .left-column,
-        .right-column {
-            background-color: #1a1a1a;
-            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 40px;
             border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .left-column {
-            margin-bottom: 20px;
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
         }
 
-        .left-column,
-        .right-column {
-            width: 100%;
-        }
-
-        h2 {
-            border-bottom: 2px solid #03a9f4;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .experience-item,
-        .education-item,
-        .project-item,
-        .skills-item,
-        .certification-item {
-            margin-bottom: 20px;
-        }
-
-        .experience-item h3,
-        .education-item h3 {
-            margin: 0;
-            font-size: 18px;
-            color: #03a9f4;
-        }
-
-        .experience-item p,
-        .education-item p,
-        .project-item p {
-            margin: 5px 0;
-            color: #cccccc;
-        }
-
-        .certificate-item{
-            color: #f5f5f5;
-            text-decoration: None;
-        }
-
-        .certificate-item a:visited{
-            color: #f5f5f5;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
+        .header h1 {
+            color: var(--accent-color);
             margin-bottom: 10px;
         }
 
-        footer {
+        .contact-info {
             text-align: center;
-            padding: 10px;
-            background-color: #1a1a1a;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #cccccc;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        @media (min-width: 600px) {
+        .contact-info a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info a svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .section-content {
+            padding-left: 20px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .project-details {
+            padding-left: 20px;
+        }
+
+        .project-details li {
+            margin-bottom: 10px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 600px) {
             .container {
-                flex-direction: row;
-                gap: 20px;
+                padding: 20px;
             }
-
-            .left-column,
-            .right-column {
-                flex: 1;
-                min-width: 300px;
+            
+            .contact-info {
+                flex-direction: column;
             }
-
-            header h1 {
-                font-size: 42px;
-            }
-
-            header p {
-                font-size: 18px;
-            }
-
-            .contact-info ul {
-                flex-direction: row;
-                gap: 15px;
-                font-size: 16px;
-            }
-
-            h2 {
-                font-size: 28px;
-            }
-
-            .experience-item h3,
-            .education-item h3 {
-                font-size: 20px;
+            
+            .contact-info a {
+                margin: 5px 0;
             }
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>Tanesh Gujar</h1>
-        <p>AI, Data Science, and Machine Learning Enthusiast committed to driving innovation and delivering impactful solutions.</p>
-        <div class="contact-info">
-            <ul>
-                <li><i class="fas fa-phone-alt"></i>7276590078</li>
-                <li><i class="fas fa-envelope"></i> <a href="mailto:gujartanesh@gmail.com">gujartanesh@gmail.com</a></li>
-                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tanesh-gujar/" target="_blank">LinkedIn</a></li>
-                <li><i class="fab fa-github"></i> <a href="https://github.com/TaneshG13" target="_blank">GitHub</a></li>
-            </ul>
-        </div>
-    </header>
-
     <div class="container">
-        <div class="left-column">
-            <section id="experience">
-                <h2>Experience</h2>
-                <div class="experience-item">
-                    <h3>Python Developer and Trainer</h3>
-                    <p><strong>Campus Credentials Pvt. Ltd. (Oct 2023 - Present)</strong></p>
-                    <ul>
-                        <li>Designed engaging lessons and hands-on activities for Python training.</li>
-                        <li>Monitored student progress through quizzes and projects, providing feedback for improvement.</li>
-                        <li>Kept up-to-date with Python developments to ensure relevant teaching content.</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Data Science and analysis virtual internship Internship</h3>
-                    <p><strong>Netzwerk Academy (April 2023 - Sep 2023)</strong></p>
-                    <ul>
-                        <li>Completed a 24-week AI-ML Virtual Internship with an Excellent grade.</li>
-                        <li>Proficient in Mathematics, Python, and various data science libraries; skilled in Machine Learning techniques and SQL.</li>
-                        <li>Worked on image classification and object detection projects.</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Developer virtual experience program</h3>
-                    <p><strong>Accenture (may 2022 -sep 2022)</strong></p>
-                    <ul>
-                        <li>Completed a Developer Virtual Experience Program where I worked on industry-relevant projects, simulating real-world scenarios.        </li>
-                         <li>Gained practical experience in software development, including coding, debugging, and testing applications.</li>
-                
-                        <li>Developed a Movie Recommendation System as an internship project.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="education">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <h3>B-Tech Artificial Intelligence and Machine Learnig</h3>
-                    <p><strong>SVKM'S NMIMS University (2021-2024)</strong></p>
-                    <p><strong>MUKESH PATEL SCHOOL OF TECHNOLOGY MANAGEMENT & ENGINEERING - SHIRPUR</strong></p>
-                    <p>CGPA: 3.01</p>
-                </div>
-
-            </section>
+        <div class="header">
+            <h1>Tanesh Gujar</h1>
+            <div class="contact-info">
+                <a href="mailto:gujartanesh@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    gujartanesh@gmail.com
+                </a>
+                <a href="tel:+917276590078">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (+91) 7276590078
+                </a>
+                <a href="https://www.linkedin.com/in/tanesh-gujar/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/TaneshG13" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Shirpur, MH
+                </a>
+            </div>
         </div>
 
-        <div class="right-column">
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="project-item">
-                    <h3><strong>Movie Recommendation System</strong></h3>
-                    <p>Created a movie recommendation system in Python utilizing content-based filtering with TF-IDF to enhance recommendation accuracy based on movie features.</p>
-                <!--<p><a href="https://satyajeet1718.github.io/Portfolio/movie_recommendation.html" target="_blank">Link</a></p>-->
+        <div class="section">
+            <h2 class="section-title">Summary</h2>
+            <div class="section-content">
+                <p>Results-oriented AI/ML enthusiast with a strong foundation in machine learning, deep learning, and natural language processing. Proficient in the use of Python, TensorFlow, Scikit-learn, and data analysis tools like Pandas and NumPy. Proficient application of statistical and mathematical techniques for the development and optimization of AI solutions. Passionate about technology to solve complex problems and contribute to innovative advancement in the field of artificial intelligence.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="section-content">
+                <div class="project">
+                    <h3 class="project-title">RAG Chatbot Implementation</h3>
+                    <ul class="project-details">
+                        <li>Developed a Retrieval-Augmented Generation (RAG) chatbot combining retrieval-based techniques with generative models for accurate, context-aware responses.</li>
+                        <li>Integrated a large-scale knowledge base and utilized embeddings with FAISS for similarity search to retrieve relevant documents.</li>
+                        <li>Fine-tuned a pre-trained language model (llama) for response generation.</li>
+                        <li>Enhanced performance with efficient data preprocessing, tokenization, and response ranking techniques.</li>
+                        <li>Deployed the solution as a web-based application enabling real-time interactive conversations.</li>
+                    </ul>
                 </div>
-                <div class="project-item">
-                    <h3><strong>Multi-Language Text Summarizer</strong></h3>
-                    <p>Python-based tool developed using NLTK designed to efficiently summarize text in multiple languages, including English, Marathi, and Mixed-Language (English, Marathi, and Hindi) with multiple reduction modes.</p>
-                   <!-- <p><a href="https://satyajeet1718.github.io/Portfolio/Multi-language_text_summerizer.html" target="_blank">Link</a></p>-->
+                <div class="project">
+                    <h3 class="project-title">Deepfake Detection Using CNN</h3>
+                    <ul class="project-details">
+                        <li>Designed a convolutional neural network (CNN) to detect deepfake faces by analysing real and generated images.</li>
+                        <li>Pre-processed the dataset of 140k real and fake faces, applying image augmentation techniques to improve model robustness.</li>
+                        <li>Achieved high classification accuracy by fine-tuning a pre-trained model and deployed the solution as a web application for real-time deepfake detection using Flask and TensorFlow.</li>
+                    </ul>
                 </div>
-                <div class="project-item">
-                    <h3><strong>Real-Time Cryptocurrency Analyzer Website</strong></h3>
-                    <p>Developed a website for real-time cryptocurrency analysis as part of a group project. Collaborated with a team to incorporate features for trend visualization, current news, live price updates, and market insights.</p>
+                <div class="project">
+                    <h3 class="project-title">News Classification Using BERT</h3>
+                    <ul class="project-details">
+                        <li>Developed a news classification model using the BERT transformer to categorize news articles into predefined categories.</li>
+                        <li>Pre-processed a large dataset of news articles and fine-tuned the BERT model to achieve high classification accuracy.</li>
+                        <li>Deployed the model on Render for real-time predictions, ensuring accessibility and scalability.</li>
+                        <li>Utilized Python, TensorFlow, and Flask to build and deploy the project.</li>
+                    </ul>
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <section id="certifications">
-                <h2>Certified Courses</h2>
-                <ul>
-                    <li class="certificate-item"><a href="https://www.coursera.org/account/accomplishments/specialization/9JMBRUVQHQSH">Mathematics for Machine Learning and Data Science Specialization</a></li>
-                    <li class="certificate-item"><a href="https://www.coursera.org/account/accomplishments/specialization/R8X4XN66GDEH">Machine Learning Specialization</a></li>
-                </ul>
-            </section>
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="section-content">
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">Data Analytics</span>
+                    <span class="skill-tag">Artificial Intelligence</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Algorithms</span>
+                </div>
+            </div>
+        </div>
 
-            <section id="skills">
-                <h2>Skills and Abilities</h2>
-                <ul>
-                    <li>Python Programming</li>
-                    <li>Data Structures and Algorithms (DSA)</li>
-                    <li>Database: MySQL,MongoDB</li>
-                    <li>Data Science and Data analytics : numpy,pandas,Matplotlib,seaborn,Scikit-learn,Excel</li>
-                    <li>Version Control:Git</li>
-                    <li>Server and Deployment: Docker,AWS</li>
-
-                </ul>
-            </section>
-
-            <section id="languages">
-                <h2>Languages</h2>
-                <ul>
-                    <li>Proficient in English, Hindi, Marathi</li>
-                </ul>
-            </section>
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="section-content">
+                <h3>SVKM'S NMIMS Deemed to be University, Mumbai</h3>
+                <p>Bachelor of Technology (AIML)</p>
+                <p>Expected Graduation: June 2026</p>
+                <p>CGPA: 3.01/4</p>
+                <p>Mukesh Patel School of Technology Management and Engineering, Shirpur Campus</p>
+            </div>
         </div>
     </div>
-
-    <footer>
-        <p>©2024 Tanesh Gujar. All rights reserved.</p>
-    </footer>
-
 </body>
-
 </html>
